@@ -1,0 +1,43 @@
+<h1>Create new Review</h1>
+
+@* @using (Html.BeginForm())
+{
+  <p>Destination: @Html.TextBoxFor(x => x.Destination)</p>
+  
+  <p>Details: @Html.TextBoxFor(x => x.Details)</p>
+
+  <p>Country: @Html.TextBoxFor(x => x.Country)</p>
+
+  <p>City: @Html.TextBoxFor(x => x.City)</p>
+
+  <p>Rating: @Html.NumericInputFor(x => x.Rating, min: 0, max: 5)</p>
+} *@
+
+@model TravelClient.Models.Review
+
+@using (Html.BeginForm())
+{
+  <table>
+    <tr>
+      <td>@Html.LabelFor(model => model.Destination)</td>
+      <td>@Html.TextBoxFor(model => model.Destination)</td>
+    </tr> 
+    <tr>
+      <td>@Html.LabelFor(model => model.ReviewDetails)</td>
+      <td>@Html.TextAreaFor(model => model.ReviewDetails)</td>
+    </tr> 
+    <tr>
+      <td>@Html.LabelFor(model => model.Country)</td>
+      <td>@Html.TextBoxFor(model => model.Country)</td>
+    </tr>
+    <tr>
+      <td>@Html.LabelFor(model => model.City)</td>
+      <td>@Html.TextBoxFor(model => model.City)</td>
+    </tr>
+    <tr>
+      <td>@Html.LabelFor(model => model.Rating)</td>
+      <td>@Html.TextBoxFor(model => model.Rating, new { type="number", min="0", max="5"})</td>
+    </tr>
+  </table>
+  <button type="submit" class="btn btn-default fa" ><i class="fa-user-plus"> Add Review</i></button>
+}

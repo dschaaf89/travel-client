@@ -1,0 +1,14 @@
+@model TravelClient.Models.Review
+
+<h1>Review for: @Html.DisplayFor(x => x.Destination)</h1>
+
+<ul>
+    <li>ID: @Html.DisplayFor(x => x.ReviewId)</li>
+    <li>Details: @Html.DisplayFor(x => x.ReviewDetails)</li>
+    <li>Country: @Html.DisplayFor(x => x.Country)</li>
+    <li>City: @Html.DisplayFor(x => x.City)</li>
+    <li>Rating: @Html.DisplayFor(x => x.Rating)</li>
+</ul>
+
+<p>@Html.ActionLink("Edit Review", "Edit", new { id = Model.ReviewId})</p>
+<p>@Html.ActionLink("Delete Review", "Delete", new { id = Model.ReviewId})</p>
